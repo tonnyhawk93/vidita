@@ -171,6 +171,9 @@ const MyTable: React.FC<Props> = ({ setIds }) => {
       dataIndex: "delivery_date",
       key: "id",
       ...getColumnSearchProps("delivery_date"),
+      defaultSortOrder: "ascend",
+      sorter: (a, b) =>
+        Date.parse(a.delivery_date) - Date.parse(b.delivery_date),
     },
     {
       title: "Валюта",
